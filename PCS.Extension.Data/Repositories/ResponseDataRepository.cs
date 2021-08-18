@@ -77,5 +77,19 @@ namespace PCS.Extension.Data.Repositories
         {
             _extensionContext.Entry(reponseData).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
         }
+        public int InsertCurrency(Currency x)
+        {
+            Currency newCurrency = new Currency
+            {
+                CurrencyCode = x.CurrencyCode,
+                CurrencyName = x.CurrencyName,
+                ExchangeRate = x.ExchangeRate,
+                GetDateTime = x.GetDateTime
+
+            };
+            _extensionContext.Add(newCurrency);
+
+            return newCurrency.Id;
+        }
     }
 }
