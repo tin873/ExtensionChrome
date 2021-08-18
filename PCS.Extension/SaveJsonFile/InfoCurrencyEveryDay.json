@@ -1,0 +1,142 @@
+[
+  {
+    "Id": 1,
+    "CurrencyName": "AUSTRALIAN DOLLAR",
+    "CurrencyCode": "AUD",
+    "ExchangeRate": 16305.32,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 2,
+    "CurrencyName": "CANADIAN DOLLAR",
+    "CurrencyCode": "CAD",
+    "ExchangeRate": 17808.13,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 3,
+    "CurrencyName": "SWISS FRANC",
+    "CurrencyCode": "CHF",
+    "ExchangeRate": 24582.07,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 4,
+    "CurrencyName": "YUAN RENMINBI",
+    "CurrencyCode": "CNY",
+    "ExchangeRate": 3483.83,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 5,
+    "CurrencyName": "DANISH KRONE",
+    "CurrencyCode": "DKK",
+    "ExchangeRate": 3530.44,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 6,
+    "CurrencyName": "EURO",
+    "CurrencyCode": "EUR",
+    "ExchangeRate": 26316.89,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 7,
+    "CurrencyName": "POUND STERLING",
+    "CurrencyCode": "GBP",
+    "ExchangeRate": 30884.36,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 8,
+    "CurrencyName": "HONGKONG DOLLAR",
+    "CurrencyCode": "HKD",
+    "ExchangeRate": 2884.59,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 9,
+    "CurrencyName": "INDIAN RUPEE",
+    "CurrencyCode": "INR",
+    "ExchangeRate": 306.23,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 10,
+    "CurrencyName": "YEN",
+    "CurrencyCode": "JPY",
+    "ExchangeRate": 205.19,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 11,
+    "CurrencyName": "KOREAN WON",
+    "CurrencyCode": "KRW",
+    "ExchangeRate": 18.63,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 12,
+    "CurrencyName": "KUWAITI DINAR",
+    "CurrencyCode": "KWD",
+    "ExchangeRate": 75813.75,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 13,
+    "CurrencyName": "MALAYSIAN RINGGIT",
+    "CurrencyCode": "MYR",
+    "ExchangeRate": 5328.79,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 14,
+    "CurrencyName": "NORWEGIAN KRONER",
+    "CurrencyCode": "NOK",
+    "ExchangeRate": 2509.68,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 15,
+    "CurrencyName": "RUSSIAN RUBLE",
+    "CurrencyCode": "RUB",
+    "ExchangeRate": 310.11,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 16,
+    "CurrencyName": "SAUDI RIAL",
+    "CurrencyCode": "SAR",
+    "ExchangeRate": 6072.54,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 17,
+    "CurrencyName": "SWEDISH KRONA",
+    "CurrencyCode": "SEK",
+    "ExchangeRate": 2554.15,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 18,
+    "CurrencyName": "SINGAPORE DOLLAR",
+    "CurrencyCode": "SGD",
+    "ExchangeRate": 16505.95,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 19,
+    "CurrencyName": "THAILAND BAHT",
+    "CurrencyCode": "THB",
+    "ExchangeRate": 674.59,
+    "GetDateTime": "0001-01-01T00:00:00"
+  },
+  {
+    "Id": 20,
+    "CurrencyName": "US DOLLAR",
+    "CurrencyCode": "USD",
+    "ExchangeRate": 22730.00,
+    "GetDateTime": "0001-01-01T00:00:00"
+  }
+]
