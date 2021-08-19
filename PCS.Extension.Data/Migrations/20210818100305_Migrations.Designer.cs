@@ -10,8 +10,8 @@ using PCS.Extension.Data.EF;
 namespace PCS.Extension.Data.Migrations
 {
     [DbContext(typeof(ExtensionContext))]
-    [Migration("20210814023045_initial")]
-    partial class initial
+    [Migration("20210818100305_Migrations")]
+    partial class Migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,6 +44,15 @@ namespace PCS.Extension.Data.Migrations
 
                     b.Property<string>("CurrencyCode")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CurrencyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("ExchangeRate")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("GetDateTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

@@ -24,24 +24,25 @@ namespace PCS.Extension.Data.Repositories
         public IEnumerable<NewResponseData> GetAll(string username)
         {
             var lstRes = from x in _extensionContext.ReponseDataDbSet
-                             join y in _extensionContext.SourcePages on x.IdPage equals y.Id
-                             join z in _extensionContext.Currencies on x.IdCurrency equals z.Id
-                             where x.UserName == username
-                             select new NewResponseData{
-                                 Availability = x.Availability,
-                                 CurrencyCode = z.CurrencyCode,
-                                 Status = x.Status,
-                                 GetDate = x.GetDate,
-                                 PageName = y.PageName,
-                                 Price = x.Price,
-                                 ProductImageSrc = x.ProductImageSrc,
-                                 ProductTitle = x.ProductTitle,
-                                 Url = x.Url,
-                                 UserName = username
-                             };
+                         join y in _extensionContext.SourcePages on x.IdPage equals y.Id
+                         join z in _extensionContext.Currencies on x.IdCurrency equals z.Id
+                         where x.UserName == username
+                         select new NewResponseData
+                         {
+                             Availability = x.Availability,
+                             CurrencyCode = z.CurrencyCode,
+                             Status = x.Status,
+                             GetDate = x.GetDate,
+                             PageName = y.PageName,
+                             Price = x.Price,
+                             ProductImageSrc = x.ProductImageSrc,
+                             ProductTitle = x.ProductTitle,
+                             Url = x.Url,
+                             UserName = username
+                         };
 
 
-                                                             
+
             return lstRes.ToList();
         }
 
@@ -76,6 +77,20 @@ namespace PCS.Extension.Data.Repositories
         public void Update(ResponseData reponseData)
         {
             _extensionContext.Entry(reponseData).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+        }
+        public int InsertCurrency(Currency x)
+        {
+            Currency newCurrency = new Currency
+            {
+                CurrencyCode = x.CurrencyCode,
+                CurrencyName = x.CurrencyName,
+                ExchangeRate = x.ExchangeRate,
+                GetDateTime = x.GetDateTime
+
+            };
+            _extensionContext.Add(newCurrency);
+
+            return newCurrency.Id;
         }
     }
 }

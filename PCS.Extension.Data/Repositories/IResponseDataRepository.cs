@@ -11,6 +11,7 @@ namespace PCS.Extension.Data.Repositories
         IEnumerable<NewResponseData> GetAll(string userName);
         ResponseData GetById(int ReponseData);
         int Insert(ResponseData reponseData);
+        int InsertCurrency(Currency currency);
         void Update(ResponseData reponseData);
         void Delete(int ReponseData);
         void Save();

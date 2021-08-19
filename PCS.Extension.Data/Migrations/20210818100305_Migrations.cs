@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PCS.Extension.Data.Migrations
 {
-    public partial class initial : Migration
+    public partial class Migrations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,7 +25,10 @@ namespace PCS.Extension.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CurrencyCode = table.Column<string>(nullable: true)
+                    CurrencyName = table.Column<string>(nullable: true),
+                    CurrencyCode = table.Column<string>(nullable: true),
+                    ExchangeRate = table.Column<decimal>(nullable: false),
+                    GetDateTime = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {

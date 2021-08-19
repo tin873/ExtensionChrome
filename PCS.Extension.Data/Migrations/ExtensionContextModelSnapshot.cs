@@ -43,6 +43,15 @@ namespace PCS.Extension.Data.Migrations
                     b.Property<string>("CurrencyCode")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CurrencyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("ExchangeRate")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("GetDateTime")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
 
                     b.ToTable("Currencies");

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PCS.Extension.Service
 {
-    public class ExchangeToVND
+    public class DeserializeJsonCurrency
     {
         public async Task<List<Currency>> DeserializeJson()
         {
@@ -16,17 +16,18 @@ namespace PCS.Extension.Service
             // Make sure to change this folder to your own folder  
             string folder = Directory.GetCurrentDirectory();
             // Filename  
-            string fileName = "SaveJson\\InfomationInContext.json";
+            string fileName = "SaveJsonFile\\InfoCurrencyEveryDay.json";
 
             // Fullpath. You can direct hardcode it if you like. 
             // Read a file  
             string fullPath = Path.Combine(folder, fileName);
 
             using FileStream openStream = File.OpenRead(fullPath);
-            List<Currency> lstLeague =
+            List<Currency> lstCurrency =
                 await JsonSerializer.DeserializeAsync<List<Currency>>(openStream);
 
-            return lstLeague;
+            return lstCurrency;
         }
+
     }
 }
