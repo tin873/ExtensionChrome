@@ -33,9 +33,25 @@ namespace PCS.Extension.Data.Migrations
                     b.ToTable("Appconfigs");
                 });
 
+            modelBuilder.Entity("PCS.Extension.Data.Entities.ClientCard", b =>
+                {
+                    b.Property<string>("ClientCardId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ClientCardId");
+
+                    b.ToTable("ClientCards");
+                });
+
             modelBuilder.Entity("PCS.Extension.Data.Entities.Currency", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CurencyId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -52,14 +68,14 @@ namespace PCS.Extension.Data.Migrations
                     b.Property<DateTime>("GetDateTime")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("Id");
+                    b.HasKey("CurencyId");
 
                     b.ToTable("Currencies");
                 });
 
-            modelBuilder.Entity("PCS.Extension.Data.Entities.ResponseData", b =>
+            modelBuilder.Entity("PCS.Extension.Data.Entities.Products", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -67,13 +83,10 @@ namespace PCS.Extension.Data.Migrations
                     b.Property<string>("Availability")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("GetDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("ClientCardId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("IdCurrency")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdPage")
+                    b.Property<int>("CurrencyId")
                         .HasColumnType("int");
 
                     b.Property<string>("Price")
@@ -85,33 +98,58 @@ namespace PCS.Extension.Data.Migrations
                     b.Property<string>("ProductTitle")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SourcePageId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("ProductId");
 
-                    b.HasKey("Id");
+                    b.HasIndex("ClientCardId");
 
-                    b.ToTable("ReponseDataDbSet");
+                    b.HasIndex("CurrencyId");
+
+                    b.HasIndex("SourcePageId");
+
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("PCS.Extension.Data.Entities.SourcePage", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("SourcePageId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Domain")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PageName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("SourcePageId");
 
                     b.ToTable("SourcePages");
+                });
+
+            modelBuilder.Entity("PCS.Extension.Data.Entities.Products", b =>
+                {
+                    b.HasOne("PCS.Extension.Data.Entities.ClientCard", "ClientCard")
+                        .WithMany("Products")
+                        .HasForeignKey("ClientCardId");
+
+                    b.HasOne("PCS.Extension.Data.Entities.Currency", "Currency")
+                        .WithMany("Products")
+                        .HasForeignKey("CurrencyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PCS.Extension.Data.Entities.SourcePage", "SourcePage")
+                        .WithMany("Products")
+                        .HasForeignKey("SourcePageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

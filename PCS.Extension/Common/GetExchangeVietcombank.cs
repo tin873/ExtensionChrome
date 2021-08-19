@@ -7,7 +7,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PCS.Extension.Service
+namespace PCS.Extension.Common
 {
     class GetExchangeVietcombank
     {
@@ -39,7 +39,7 @@ namespace PCS.Extension.Service
                 {
                     Currency temp = new Currency()
                     {
-                        Id = i+1,
+                        CurencyId = i+1,
                         CurrencyName = await page.EvaluateExpressionAsync<string>($"document.querySelector(\"#ctl00_Content_ExrateView > tbody > tr:nth-child({i+3}) > td:nth-child(1)\").innerText"),
                         CurrencyCode = await page.EvaluateExpressionAsync<string>($"document.querySelector(\"#ctl00_Content_ExrateView > tbody > tr:nth-child({i+3}) > td:nth-child(2)\").innerText"),
                         ExchangeRate = await page.EvaluateExpressionAsync<decimal>($"document.querySelector(\"#ctl00_Content_ExrateView > tbody > tr:nth-child({i+3}) > td:nth-child(4)\").innerText")

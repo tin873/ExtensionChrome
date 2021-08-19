@@ -1,0 +1,94 @@
+[
+  {
+    "PageName": "Amazon",
+    "Domain": "https://www.amazon.com/"
+  },
+  {
+    "PageName": "Mercari",
+    "Domain": "https://www.mercari.com/jp/"
+  },
+  {
+    "PageName": "YahooShopping",
+    "Domain": "https://shopping.yahoo.co.jp/"
+  },
+  {
+    "PageName": "Rakuten",
+    "Domain": "https://www.rakuten.co.jp/"
+  },
+  {
+    "PageName": "Yahoo Paypaymall",
+    "Domain": "https://paypaymall.yahoo.co.jp/"
+  },
+  {
+    "PageName": "Yahoo Paypayfleamarket",
+    "Domain": "https://paypayfleamarket.yahoo.co.jp/"
+  },
+  {
+    "PageName": "Adidas",
+    "Domain": "https://www.adidas.com/"
+  },
+  {
+    "PageName": "Ebay",
+    "Domain": "https://www.ebay.com/"
+  },
+  {
+    "PageName": "Yes24",
+    "Domain": "http://www.yes24.com/Main/default.aspx"
+  },
+  {
+    "PageName": "Boscovs",
+    "Domain": "https://www.boscovs.com/"
+  },
+  {
+    "PageName": "Usc",
+    "Domain": "https://www.usc.co.uk/"
+  },
+  {
+    "PageName": "Uniqlo",
+    "Domain": "https://www.uniqlo.com/jp/ja/"
+  },
+  {
+    "PageName": "Nike",
+    "Domain": "https://www.nike.com/jp/"
+  },
+  {
+    "PageName": "Forever21",
+    "Domain": "https://www.forever21.com/"
+  },
+  {
+    "PageName": "CalvinKlein",
+    "Domain": "https://www.calvinklein.us/en"
+  },
+  {
+    "PageName": "Reebok",
+    "Domain": "https://reebok.jp/"
+  },
+  {
+    "PageName": "GoldPartner",
+    "Domain": "https://www.golfpartner.jp/"
+  },
+  {
+    "PageName": "Akf-shop",
+    "Domain": "https://www.akf-shop.de/"
+  },
+  {
+    "PageName": "Dm",
+    "Domain": "https://www.dm.de/"
+  },
+  {
+    "PageName": "Fragrancenet",
+    "Domain": "https://www.fragrancenet.com/"
+  },
+  {
+    "PageName": "b-net Tackleberry",
+    "Domain": "http://b-net.tackleberry.co.jp/"
+  },
+  {
+    "PageName": "cpgn",
+    "Domain": "http://cpgn.co.kr/"
+  },
+  {
+    "PageName": "Dutyfreeislandshop",
+    "Domain": "https://dutyfreeislandshop.com/"
+  }
+]

@@ -14,6 +14,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.OpenApi.Models;
+using PCS.Extension.Data.Infrastructure;
+using PCS.Extension.SaveJsonFile;
+using PCS.Extension.Data.Repositories.implement;
+using PCS.Extension.Services;
+using PCS.Extension.Services.interfaces;
+using PCS.Extension.Services.implement;
 
 namespace PCS.Extension
 {
@@ -31,8 +37,22 @@ namespace PCS.Extension
         {
             var connectionString = Configuration.GetConnectionString("Extension");
             services.AddDbContext<ExtensionContext>(options => options.UseSqlServer(connectionString));
-            services.AddTransient<IResponseDataRepository, ResponseDataRepository>();
-            services.AddScoped<ExtensionContext, ExtensionContext>();
+            //services.AddTransient<IResponseDataRepository, ResponseDataRepository>();
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+            services.AddScoped<IDbFactory, DbFactory>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            //repository
+            services.AddScoped<IClientCardRepository, ClientCardRepository>();
+            services.AddScoped<ICurrencyRepository, CurrencyRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ISourcePageRepository, SourcePageRepository>();
+            //service
+            services.AddScoped<IClientCardService, ClientCardService>();
+            services.AddScoped<ICurrencyService, CurrencyService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ISourcePageService, SourcePageService>();
+            services.AddScoped<ExtensionContext>();
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
@@ -88,6 +108,15 @@ namespace PCS.Extension
             {
                 endpoints.MapControllers();
             });
+            using var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope();
+            try
+            {
+                ExtensionContext dbContext = serviceScope.ServiceProvider.GetRequiredService<ExtensionContext>();
+                DbInitializer.SeedData(dbContext).Wait();
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PCS.Extension.Data.Entities
+﻿namespace PCS.Extension.Data.Entities
 {
     public class AppConfig
     {

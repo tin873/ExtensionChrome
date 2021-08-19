@@ -1,9 +1,6 @@
-﻿using PCS.Extension.Data.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using PCS.Extension.Data.Configuration;
 using PCS.Extension.Data.Entities;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PCS.Extension.Data.EF
 {
@@ -20,8 +17,9 @@ namespace PCS.Extension.Data.EF
             //base.OnModelCreating(modelBuilder);
 
         }
-        public DbSet<ResponseData> ReponseDataDbSet { set; get; }
+        public DbSet<Products> Products { set; get; }
         public DbSet<Currency> Currencies { set; get; }
         public DbSet<SourcePage> SourcePages { set; get; }
+        public DbSet<ClientCard> ClientCards { get; set; }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PCS.Extension.Data.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PCS.Extension.Data.Configuration
 {
@@ -12,7 +9,7 @@ namespace PCS.Extension.Data.Configuration
         public void Configure(EntityTypeBuilder<Currency> builder)
         {
             builder.ToTable("Currencies");
-            builder.HasKey(x => x.Id);
+            builder.HasKey(x => x.CurencyId);
         }
     }
 }

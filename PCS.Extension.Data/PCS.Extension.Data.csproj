@@ -5,17 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20210804093232_initialize.cs" />
-    <Compile Remove="Migrations\20210804093232_initialize.Designer.cs" />
-    <Compile Remove="Migrations\20210813073804_initial.cs" />
-    <Compile Remove="Migrations\20210813073804_initial.Designer.cs" />
-    <Compile Remove="Migrations\20210814022028_inital.cs" />
-    <Compile Remove="Migrations\20210814022028_inital.Designer.cs" />
-    <Compile Remove="Migrations\20210814023045_initial.cs" />
-    <Compile Remove="Migrations\20210814023045_initial.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.17">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -27,10 +16,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.17" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.17" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

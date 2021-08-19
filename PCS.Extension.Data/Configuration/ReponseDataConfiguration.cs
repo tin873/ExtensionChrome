@@ -1,18 +1,15 @@
-﻿using PCS.Extension.Data.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using PCS.Extension.Data.Entities;
 
 namespace PCS.Extension.Data.Configuration
 {
-    public class ReponseDataConfiguration : IEntityTypeConfiguration<ResponseData>
+    public class ReponseDataConfiguration : IEntityTypeConfiguration<Products>
     {
-        public void Configure(EntityTypeBuilder<ResponseData> builder)
+        public void Configure(EntityTypeBuilder<Products> builder)
         {
-            builder.ToTable("ReponseData");
-            builder.HasKey(x => x.Id);
+            builder.ToTable("Products");
+            builder.HasKey(x => x.ProductId);
         }
     }
 }

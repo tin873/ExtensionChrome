@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace PCS.Extension.Service
+namespace PCS.Extension.Common
 {
     public class DeserializeJsonCurrency
     {
