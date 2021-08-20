@@ -31,22 +31,6 @@ namespace PCS.Extension.Data.Entities
         public SourcePage SourcePage { get; set; }
         public int CurrencyId { get; set; }
         public Currency Currency { get; set; }
-        /// <summary>
-        /// quy đổi thành giá trị tiền việt
-        /// </summary>
-        public decimal ExchangePice
-        {
-            get
-            {
-                decimal price = 0;
-                if (CurrencyId == Currency.CurencyId)
-                {
-                    price = decimal.Parse(Price) * Currency.ExchangeRate;
-                    price = Math.Ceiling(price);
-                }
-                return price;
-            }
-        }
 
         public string ClientCardId { get; set; }
         public ClientCard ClientCard { get; set; }

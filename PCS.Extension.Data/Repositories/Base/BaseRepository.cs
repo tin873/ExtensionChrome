@@ -25,10 +25,11 @@ namespace PCS.Extension.Data.Repositories
             return _unitOfWork.Commit();
         }
 
-        public int Insert(Entity entity)
+        public Entity Insert(Entity entity)
         {
             _dbSet.Add(entity);
-            return _unitOfWork.Commit();
+            _unitOfWork.Commit();
+            return entity;
         }
 
         public int Update(Entity entity)

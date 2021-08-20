@@ -10,7 +10,7 @@ namespace PCS.Extension.Data.Entities
         /// mã định danh client mua sản phẩm
         /// </summary>
         [Key]
-        public string ClientCardId { get; set; }
+        public Guid ClientCardId { get; set; }
         /// <summary>
         /// trạng thái giỏ hàng
         /// </summary>

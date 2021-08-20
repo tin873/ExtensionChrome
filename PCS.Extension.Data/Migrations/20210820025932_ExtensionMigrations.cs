@@ -23,7 +23,7 @@ namespace PCS.Extension.Data.Migrations
                 name: "ClientCards",
                 columns: table => new
                 {
-                    ClientCardId = table.Column<string>(nullable: false),
+                    ClientCardId = table.Column<Guid>(nullable: false),
                     Status = table.Column<string>(nullable: true),
                     CreateDate = table.Column<DateTime>(nullable: false)
                 },
@@ -75,14 +75,15 @@ namespace PCS.Extension.Data.Migrations
                     Price = table.Column<string>(nullable: true),
                     SourcePageId = table.Column<int>(nullable: false),
                     CurrencyId = table.Column<int>(nullable: false),
-                    ClientCardId = table.Column<string>(nullable: true)
+                    ClientCardId = table.Column<string>(nullable: true),
+                    ClientCardId1 = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.ProductId);
                     table.ForeignKey(
-                        name: "FK_Products_ClientCards_ClientCardId",
-                        column: x => x.ClientCardId,
+                        name: "FK_Products_ClientCards_ClientCardId1",
+                        column: x => x.ClientCardId1,
                         principalTable: "ClientCards",
                         principalColumn: "ClientCardId",
                         onDelete: ReferentialAction.Restrict);
@@ -101,9 +102,9 @@ namespace PCS.Extension.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_ClientCardId",
+                name: "IX_Products_ClientCardId1",
                 table: "Products",
-                column: "ClientCardId");
+                column: "ClientCardId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_CurrencyId",

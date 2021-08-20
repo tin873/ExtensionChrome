@@ -16,12 +16,12 @@ namespace PCS.Extension.Data.Infrastructure
         }
         public int Commit()
         {
-            return _dbContext.SaveChanges();
+            return DbContext.SaveChanges();
         }
 
         public async Task<int> CommitAsync()
         {
-            return await _dbContext.SaveChangesAsync();
+            return await DbContext.SaveChangesAsync();
         }
     }
 }

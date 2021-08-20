@@ -14,7 +14,7 @@ namespace PCS.Extension.Controllers
             _baseService = baseService;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public virtual IActionResult GetById(int Id)
         {
             var result = _baseService.GetById(Id);

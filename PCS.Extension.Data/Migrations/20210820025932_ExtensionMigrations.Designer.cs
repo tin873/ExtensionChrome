@@ -10,7 +10,7 @@ using PCS.Extension.Data.EF;
 namespace PCS.Extension.Data.Migrations
 {
     [DbContext(typeof(ExtensionContext))]
-    [Migration("20210819081529_ExtensionMigrations")]
+    [Migration("20210820025932_ExtensionMigrations")]
     partial class ExtensionMigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,8 +37,9 @@ namespace PCS.Extension.Data.Migrations
 
             modelBuilder.Entity("PCS.Extension.Data.Entities.ClientCard", b =>
                 {
-                    b.Property<string>("ClientCardId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("ClientCardId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
@@ -86,7 +87,10 @@ namespace PCS.Extension.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ClientCardId")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("ClientCardId1")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("CurrencyId")
                         .HasColumnType("int");
@@ -108,7 +112,7 @@ namespace PCS.Extension.Data.Migrations
 
                     b.HasKey("ProductId");
 
-                    b.HasIndex("ClientCardId");
+                    b.HasIndex("ClientCardId1");
 
                     b.HasIndex("CurrencyId");
 
@@ -139,7 +143,7 @@ namespace PCS.Extension.Data.Migrations
                 {
                     b.HasOne("PCS.Extension.Data.Entities.ClientCard", "ClientCard")
                         .WithMany("Products")
-                        .HasForeignKey("ClientCardId");
+                        .HasForeignKey("ClientCardId1");
 
                     b.HasOne("PCS.Extension.Data.Entities.Currency", "Currency")
                         .WithMany("Products")
