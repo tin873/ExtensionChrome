@@ -10,7 +10,7 @@ using PCS.Extension.Data.EF;
 namespace PCS.Extension.Data.Migrations
 {
     [DbContext(typeof(ExtensionContext))]
-    [Migration("20210820025932_ExtensionMigrations")]
+    [Migration("20210820101602_ExtensionMigrations")]
     partial class ExtensionMigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -95,6 +95,9 @@ namespace PCS.Extension.Data.Migrations
                     b.Property<int>("CurrencyId")
                         .HasColumnType("int");
 
+                    b.Property<decimal?>("LastPrice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Price")
                         .HasColumnType("nvarchar(max)");
 
@@ -106,6 +109,9 @@ namespace PCS.Extension.Data.Migrations
 
                     b.Property<int>("SourcePageId")
                         .HasColumnType("int");
+
+                    b.Property<bool?>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");

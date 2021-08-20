@@ -34,5 +34,25 @@ namespace PCS.Extension.Services.implement
                 return _serviceResult;
             }
         }
+
+        public ServiceResult InsertProducts(Products product)
+        {
+            try
+            {
+                var result = _baseRepository.Insert(product);
+                _serviceResult.IsSuccess = true;
+                _serviceResult.UserMsg.Add("Thêm mới thành công.");
+                _serviceResult.ExtensionCode = ExtensionCode.Success;
+                _serviceResult.Data = result;
+                return _serviceResult;
+            }
+            catch (Exception)
+            {
+                _serviceResult.IsSuccess = false;
+                _serviceResult.UserMsg.Add("Lỗi hệ thống!.");
+                _serviceResult.ExtensionCode = ExtensionCode.Exeption;
+                return _serviceResult;
+            }
+        }
     }
 }

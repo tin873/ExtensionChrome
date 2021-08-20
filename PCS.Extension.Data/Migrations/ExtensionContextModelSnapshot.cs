@@ -93,6 +93,9 @@ namespace PCS.Extension.Data.Migrations
                     b.Property<int>("CurrencyId")
                         .HasColumnType("int");
 
+                    b.Property<decimal?>("LastPrice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Price")
                         .HasColumnType("nvarchar(max)");
 
@@ -105,12 +108,15 @@ namespace PCS.Extension.Data.Migrations
                     b.Property<int>("SourcePageId")
                         .HasColumnType("int");
 
+                    b.Property<bool?>("Status")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProductId");
 
-                    b.HasIndex("ClientCardId");
+                    b.HasIndex("ClientCardId1");
 
                     b.HasIndex("CurrencyId");
 

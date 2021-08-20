@@ -7,7 +7,7 @@ namespace PCS.Extension.Controllers
     [ApiController]
     public class ExtensionBaseController<Entity> : ControllerBase where Entity : class
     {
-        private readonly IBaseService<Entity> _baseService;
+        protected readonly IBaseService<Entity> _baseService;
 
         public ExtensionBaseController(IBaseService<Entity> baseService)
         {
@@ -22,7 +22,7 @@ namespace PCS.Extension.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Entity entity)
+        public virtual IActionResult Post(Entity entity)
         {
             var result = _baseService.Insert(entity);
             return Ok(result);

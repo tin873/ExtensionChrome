@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace PCS.Extension.Data.Entities
 {
@@ -27,6 +26,9 @@ namespace PCS.Extension.Data.Entities
         /// giá
         /// </summary>
         public string Price { get; set; }
+
+        public decimal? LastPrice { get; set; }
+        public bool? Status { get; set; }
         public int SourcePageId { get; set; }
         public SourcePage SourcePage { get; set; }
         public int CurrencyId { get; set; }

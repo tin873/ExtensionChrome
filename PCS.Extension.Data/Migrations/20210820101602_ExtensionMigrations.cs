@@ -73,6 +73,8 @@ namespace PCS.Extension.Data.Migrations
                     ProductImageSrc = table.Column<string>(nullable: true),
                     Availability = table.Column<string>(nullable: true),
                     Price = table.Column<string>(nullable: true),
+                    LastPrice = table.Column<decimal>(nullable: true),
+                    Status = table.Column<bool>(nullable: true),
                     SourcePageId = table.Column<int>(nullable: false),
                     CurrencyId = table.Column<int>(nullable: false),
                     ClientCardId = table.Column<string>(nullable: true),
